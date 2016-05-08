@@ -1,5 +1,19 @@
+function pinkScript() {
+	
+}
+
 function loadPage() {
-	$('#content').load(document.location + ' #content');
+	var content = $('#content');
+	content.fadeOut(500, function() {
+		content.load(document.location.pathname + ' #content', null, function () {
+			content.fadeIn(500);
+			if (document.location.pathname === '/index.html') {
+				$('#list').sortable();
+				$('#list').disableSelection();
+				pinkScript();
+			}
+		});
+	});
 }
 
 $(function () {
