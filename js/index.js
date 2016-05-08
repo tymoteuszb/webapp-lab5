@@ -1,5 +1,5 @@
 function pinkScript() {
-	
+	$('.a li:not(li:has(.b:has(a)))').css('background', 'pink');
 }
 
 function loadPage() {
